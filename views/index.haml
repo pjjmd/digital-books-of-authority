@@ -1,40 +1,45 @@
 %form{action: '/cases', method: 'post'}
   %div
     %label Court File Number:
-    %input
+    %input{name: 'courtfileno'}
   %div
     %label Jurisdiction
-    %select
+    %select{name: 'jurisdiction'}
       %option Court of Appeal for Ontario
       %option Superior Court of Justice
       %option Divisional Court
       %option Ontario Court of Justice
   %div
     %label Party 1 Style
-    %select
+    %select{name: 'party1style'}
       %option Appellant
       %option Plantiff
       %option Moving Party
   %div
     %label Party 1 Name
-    %input
+    %input{name: 'party1name'}
+  %div
+    %label Party 1 Address
+    %input{name: 'party1address'}
   %div
     %label Party 2 Style
-    %select
+    %select{name: 'party2style'}
       %option Respondent
       %option Defendant
       %option Responding Party
   %div
     %label Party 2 Name
-    %select
-      %option
+    %input{name: 'party2name'}
   %div
-    %label Moving Party address/name
-    %input
+    %label Party 2 Address
+    %input{name: 'party2address'}
+  %div
+    %label Sender name/address
+    %input{name: 'sender'}
   %div
     %label Decision 1
     %input{type: 'url', name: 'decisionurl1'}
   %div
     %label City of service:
-    %input
+    %input{name: 'city'}
   %input{type: 'submit'}

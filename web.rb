@@ -10,7 +10,5 @@ get '/' do
 end
 
 post '/cases' do
-  decision = open(params[:decisionurl1]).read
-
-  decision
+  erb(:frontpage, locals: params)
 end
