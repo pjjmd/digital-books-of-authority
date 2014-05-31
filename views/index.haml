@@ -1,4 +1,4 @@
-%form
+%form{action: '/cases', method: 'post'}
   %div
     %label Court File Number:
     %input
@@ -33,7 +33,7 @@
     %input
   %div
     %label Decision 1
-    %input
+    %input{type: 'url', name: 'decisionurl1'}
   %div
     %label City of service:
     %input
