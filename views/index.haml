@@ -4,19 +4,30 @@
     %input
   %div
     %label Jurisdiction
+    %select
+      %option Court of Appeal for Ontario
+      %option Superior Court of Justice
+      %option Divisional Court
+      %option Ontario Court of Justice
+  %div
+    %label Party 1 Style
+    %select
+      %option Appellant
+      %option Plantiff
+      %option Moving Party
+  %div
+    %label Party 1 Name
     %input
   %div
-    %label Moving Party Name
-    %input
+    %label Party 2 Style
+    %select
+      %option Respondent
+      %option Defendant
+      %option Responding Party
   %div
-    %label Moving Party Name
-    %input
-  %div
-    %label Responding Party Style
-    %input
-  %div
-    %label Responding Party Name
-    %input
+    %label Party 2 Name
+    %select
+      %option
   %div
     %label Moving Party address/name
     %input
@@ -26,3 +37,4 @@
   %div
     %label City of service:
     %input
+  %input{type: 'submit'}
