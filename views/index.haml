@@ -1,42 +1,61 @@
-%form{action: '/cases', method: 'post'}
-  %div
-    %label Court File Number:
-    %input{name: 'courtfileno'}
-  %div
-    %label Jurisdiction
-    %select{name: 'jurisdiction'}
-      %option Court of Appeal for Ontario
-      %option Superior Court of Justice
-      %option Divisional Court
-      %option Ontario Court of Justice
-  %div
-    %label Party 1 Style
-    %select{name: 'party1style'}
-      %option Appellant
-      %option Plantiff
-      %option Moving Party
-  %div
-    %label Party 1 Name
-    %input{name: 'party1name'}
-  %div
-    %label Party 2 Style
-    %select{name: 'party2style'}
-      %option Respondent
-      %option Defendant
-      %option Responding Party
-  %div
-    %label Party 2 Name
-    %input{name: 'party2name'}
-  %div
-    %label Sender name/address
-    %input{name: 'sender'}
-  %div
-    %label Reciever name/addresses
-    %input{name: 'receiveraddress'}
-  %div
-    %label Decision 1
-    %input{type: 'url', name: 'decisionurl1'}
-  %div
-    %label City of service:
-    %input{name: 'city'}
-  %input{type: 'submit'}
+!!! html5
+%html
+  %head
+    %title Digital Books of Authority
+    %script{type: "text/javascript", src: "//code.jquery.com/jquery-latest.min.js"}
+  %body
+    %form{action: '/cases', method: 'post'}
+      %div
+        %label Court File Number:
+        %input{name: 'courtfileno'}
+      %div
+        %label Jurisdiction
+        %select{name: 'jurisdiction'}
+          %option Court of Appeal for Ontario
+          %option Superior Court of Justice
+          %option Divisional Court
+          %option Ontario Court of Justice
+      %div
+        %label Party 1 Style
+        %select{name: 'party1style'}
+          %option Appellant
+          %option Plantiff
+          %option Moving Party
+      %div
+        %label Party 1 Name
+        %input{name: 'party1name'}
+      %div
+        %label Party 2 Style
+        %select{name: 'party2style'}
+          %option Respondent
+          %option Defendant
+          %option Responding Party
+      %div
+        %label Party 2 Name
+        %input{name: 'party2name'}
+      %div
+        %label Sender name/address
+        %input{name: 'sender'}
+      %div
+        %label Reciever name/addresses
+        %input{name: 'receiveraddress'}
+      #decision0
+        %label Decision 0
+        %input{type: 'url', name: 'decisionurl0'}
+        %img.addButton{src: 'glyphicons_190_circle_plus.png'}
+      %div
+        %label City of service:
+        %input{name: 'city'}
+      %input{type: 'submit'}
+    :javascript
+      $(document).ready(function() {
+      var counter = 1;
+      $('img.addButton').click(function() {
+      var last_num = counter - 1;
+      var new_div = $('<div id=\'decision' + counter + '\'></div>');
+      new_div.append('<label>Decision ' + counter + '</label>');
+      new_div.append('<input type=\'url\' name=\'decisionurl\'' + counter + '\'></input>');
+      $('#decision' + last_num).append(new_div);
+      counter += 1;
+      });
+      });

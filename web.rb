@@ -11,9 +11,9 @@ get '/' do
 end
 
 post '/cases' do
-  url = URI.parse params[:decisionurl1]
+  url = URI.parse params[:decisionurl0]
   doc = Nokogiri::HTML(open(url))
-  params[:decision1] = doc.css('#originalDocument').first
+  params[:decision0] = doc.css('#originalDocument').first
 
   erb(:frontpage, locals: params)
 end
