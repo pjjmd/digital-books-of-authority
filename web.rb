@@ -10,5 +10,8 @@ get '/' do
 end
 
 post '/cases' do
+  url = URI.parse params[:decisionurl1]
+  params[:decision1] = url.read
+
   erb(:frontpage, locals: params)
 end

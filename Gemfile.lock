@@ -5,6 +5,7 @@ GEM
     celluloid (0.15.2)
       timers (~> 1.1.0)
     dotenv (0.7.0)
+    erubis (2.7.0)
     ffi (1.9.3)
     foreman (0.67.0)
       dotenv (~> 0.7.0)
@@ -49,6 +50,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  erubis
   foreman
   haml
   rerun
