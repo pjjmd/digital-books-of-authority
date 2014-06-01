@@ -1,5 +1,6 @@
 require 'bundler/setup'
 
+require 'nokogiri'
 require 'open-uri'
 
 require 'json'
@@ -11,7 +12,8 @@ end
 
 post '/cases' do
   url = URI.parse params[:decisionurl1]
-  params[:decision1] = url.read
+  doc = Nokogiri::HTML(open(url))
+  params[:decision1] = doc.css('#originalDocument').first
 
   erb(:frontpage, locals: params)
 end
