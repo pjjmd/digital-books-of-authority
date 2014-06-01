@@ -1,32 +1,18 @@
-<pre>
-Court File No. <%= courtfileno %>
+<p align="right">Court File No. <%= courtfileno %></p>
+<p align="center"><strong><%= jurisdiction %></strong></p>
+<p>B E T W E E N: </p>
+<p align="center"> <%= party1name %></p>
+<p align="right"><%= party1style %> </p>
+<p align="center"> -and-</p>
+<p align="center"><%= party2name %></p>
+<p align="right"><%= party2style %></p>
+<p align="center"> BOOK OF AUTHORITIES </p>
+<p align="right"> <%= sender %>
 
-<%= jurisdiction %>
+<p>TO: <strong>THIS HONOURABLE COURT</strong></p>
 
-B E T W E E N:
-
-<%= party1name %>
-
-<%= party1style %>
-
-and
-
-<%= party2name %>
-
-<%= party2style %>
-
-Book of Authorities
-
-<%= sender %>
-
-TO:
-
-THIS HONOURABLE COURT
-
-AND TO:
+<p>AND TO:
 
 <%= receiveraddress %>
-
-</pre>
-
+</p>
 <%= decision1 %>
